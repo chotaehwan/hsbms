@@ -62,52 +62,21 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- Tesseract  Tess4J -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-			<scope>test</scope>
+		    <groupId>net.sourceforge.tess4j</groupId>
+		    <artifactId>tess4j</artifactId>
+		    <version>5.4.0</version>
 		</dependency>
 
+		<!-- OPEN CV -->
 		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.querydsl</groupId>
-			<artifactId>querydsl-jpa</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.querydsl</groupId>
-			<artifactId>querydsl-apt</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-		    <groupId>org.apache.tomcat.embed</groupId>
-		    <artifactId>tomcat-embed-core</artifactId>
-		    <version>9.0.73</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.apache.tomcat.embed</groupId>
-		    <artifactId>tomcat-embed-el</artifactId>
-		    <version>9.0.73</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.apache.tomcat.embed</groupId>
-		    <artifactId>tomcat-embed-jasper</artifactId>
-		    <version>9.0.73</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.apache.tomcat.embed</groupId>
-		    <artifactId>tomcat-embed-websocket</artifactId>
-		    <version>9.0.73</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.apache.tomcat</groupId>
-		    <artifactId>tomcat-annotations-api</artifactId>
-		    <version>9.0.73</version>
-		</dependency>
+    		<groupId>org.openpnp</groupId>
+    		<artifactId>opencv</artifactId>
+    	<version>4.9.0-0</version> </dependency>
+
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -117,20 +86,6 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<!-- war 배포 시 해당 주석 제거
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-		</dependency>
-		-->
-		<!-- spring boot dependency end -->
-		
-		<!-- swagger -->
-		<dependency>
-    		<groupId>org.springdoc</groupId>
-    		<artifactId>springdoc-openapi-ui</artifactId>
-    		<version>1.7.0</version>
 		</dependency>
 		
 		<dependency>
@@ -163,12 +118,14 @@
 			<artifactId>org.egovframe.rte.fdl.crypto</artifactId>
 			<version>${org.egovframe.rte.version}</version>
 		</dependency>
+		<!-- 
 		<dependency>
     		<groupId>org.egovframe.rte</groupId>
     		<artifactId>org.egovframe.rte.fdl.security</artifactId>
     		<version>${org.egovframe.rte.version}</version>
 		</dependency>
-		
+		-->
+		 
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -194,9 +151,9 @@
 			<optional>true</optional>
 		</dependency>
 
-        	<dependency>
-            		<groupId>commons-codec</groupId>
-            		<artifactId>commons-codec</artifactId>
+        <dependency>
+        	<groupId>commons-codec</groupId>
+        	<artifactId>commons-codec</artifactId>
 			<version>1.15</version>
 		</dependency>
 		
@@ -243,50 +200,6 @@
 			<classifier>jdk8</classifier>
 		</dependency>
 
-		<!-- mysql driver -->
-
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.33</version>
-        </dependency>
-
-		<!-- oracle 10g driver -->
-		<!--
-		<dependency>
-			<groupId>ojdbc</groupId>
-			<artifactId>ojdbc</artifactId>
-			<version>14</version>
-		</dependency>
-		-->
-
-		<!-- altibase driver -->
-		<!--
-		<dependency>
-			<groupId>altibase</groupId>
-			<artifactId>altibase-jdbc-driver</artifactId>
-			<version>5.1.3.18</version>
-		</dependency>
-		-->
-
-		<!-- tibero driver -->
-		<!--
-		<dependency>
-			<groupId>com.tmax.tibero</groupId>
-			<artifactId>tibero-jdbc</artifactId>
-			<version>3.0</version>
-		</dependency>
-		-->
-
-		<!-- cubrid driver -->
-		<!--
-		<dependency>
-			<groupId>cubrid</groupId>
-			<artifactId>cubrid-jdbc</artifactId>
-			<version>8.4</version>
-		</dependency>
-		-->
-
 		<!-- validator -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -312,12 +225,6 @@
 			<artifactId>log4j-core</artifactId>
 		</dependency>
 		
-		<!-- JWT 2022.07.27 -->
-		<dependency>
-    		<groupId>io.jsonwebtoken</groupId>
-    		<artifactId>jjwt</artifactId>
-    		<version>0.9.1</version>
-		</dependency>
 
 		<dependency>
 			<groupId>commons-fileupload</groupId>

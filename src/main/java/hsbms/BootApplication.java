@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @ServletComponentScan
 @SpringBootApplication
-@EnableScheduling
+//@EnableScheduling
 
 //@Import({AppWebApplicationInitializer.class})
 
@@ -24,7 +24,7 @@ public class BootApplication {
 		
 		SpringApplication springApplication = new SpringApplication(BootApplication.class);
 		//springApplication.setBannerMode(Banner.Mode.OFF);
-		springApplication.setLogStartupInfo(false);
+		//springApplication.setLogStartupInfo(false);
 		springApplication.run(args);
 
 		log.debug("##### Application End #####");
