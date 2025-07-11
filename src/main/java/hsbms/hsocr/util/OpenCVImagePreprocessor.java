@@ -241,8 +241,8 @@ public class OpenCVImagePreprocessor {
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 
         OpenCVImagePreprocessor preprocessor = new OpenCVImagePreprocessor();
-        String imagePath = "path/to/your/image.png"; // 실제 이미지 파일 경로로 변경
-
+        //String imagePath = "path/to/your/image.png"; // 실제 이미지 파일 경로로 변경
+        String imagePath = "D:/2025_WORK/uploaded_image_1745623583496.png";
         // 전처리 파라미터 설정 (필요에 따라 조절)
         int resizeWidth = 600;
         int resizeHeight = 0; // 원본 비율 유지
@@ -255,7 +255,8 @@ public class OpenCVImagePreprocessor {
                 gaussianKernelSize, erosionKernelSize, dilationKernelSize, applyDeskew);
 
         if (processedImage != null) {
-            Imgcodecs.imwrite("path/to/save/processed_image.png", processedImage); // 처리된 이미지 저장 경로 및 파일명 변경
+            //Imgcodecs.imwrite("path/to/save/processed_image.png", processedImage); // 처리된 이미지 저장 경로 및 파일명 변경
+            Imgcodecs.imwrite("D:/2025_WORK/processed_image.png", processedImage); // 처리된 이미지 저장 경로 및 파일명 변경
             System.out.println("이미지 전처리 완료 및 저장.");
         }
     }

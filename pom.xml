@@ -78,12 +78,13 @@
     	<version>4.9.0-0</version> </dependency>
     	-->
 		<!-- OPEN CV 직접 jar 4120 버전 안맞음 -->
-
+<!-- OPEN CV 로 우선 비활성화 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>true</optional>
 		</dependency>
+-->		
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

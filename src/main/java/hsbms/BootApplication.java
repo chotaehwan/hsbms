@@ -3,6 +3,7 @@ package hsbms;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
@@ -12,8 +13,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @ServletComponentScan
 @SpringBootApplication
-//@EnableScheduling
+@ComponentScan("hsbms.com.config")
 
+//@EnableScheduling
 //@Import({AppWebApplicationInitializer.class})
 
 public class BootApplication {

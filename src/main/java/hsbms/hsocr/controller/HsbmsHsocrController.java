@@ -9,6 +9,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,43 +19,50 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import hsbms.hsocr.service.HsbmsHsocrService;
 import hsbms.hsocr.util.OcrUtil;
 import org.springframework.web.multipart.MultipartFile;
 
+import ch.qos.logback.classic.Logger;
+
 @RestController
 public class HsbmsHsocrController {
+
+    @Autowired
+    private HsbmsHsocrService ocrService;
 	
+    private final Logger log = (Logger) LoggerFactory.getLogger(getClass());
+    
 	@GetMapping("/api/ocr")
     public String runOcr(@RequestParam String imagePath) {
         return OcrUtil.extractTextFromImage(imagePath);
     }
+	//2025-05-11
 	
+    @PostMapping("/api/ocr/upload")
+    public ResponseEntity<String> process(@RequestParam("file") MultipartFile file) {
+    	log.info("## 이미지 시작  ");
+        String result = ocrService.extractTextFromImage(file);
+        return ResponseEntity.ok(result);
+    }
+    
 	
 	//POST http://localhost:8080/api/ocr/upload
-	@PostMapping("/api/ocr/upload")
+	@PostMapping("/api/ocr/upload_0712")
     public String uploadAndOcr(@RequestParam("file") MultipartFile file) {
-		
 		//log.debug(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-		
         if (file.isEmpty()) {
             return "파일이 없습니다.";
         }
-
         try {
             // 임시 파일 생성
             File tempFile = File.createTempFile("ocr_", ".png");
             file.transferTo(tempFile);
-
             String ocrResult = OcrUtil.extractTextFromFile(tempFile);
-
             // 사용 후 삭제
             tempFile.delete();
-
             System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 종료");
-            
             return ocrResult;
-
-
         } catch (IOException e) {
             return "파일 처리 실패: " + e.getMessage();
         }
