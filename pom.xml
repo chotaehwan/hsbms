@@ -67,15 +67,17 @@
 		<dependency>
 		    <groupId>net.sourceforge.tess4j</groupId>
 		    <artifactId>tess4j</artifactId>
-		    <version>5.4.0</version>
+		    <version>5.7.0</version>
 		</dependency>
 
 		<!-- OPEN CV -->
+		<!-- 
 		<dependency>
     		<groupId>org.openpnp</groupId>
     		<artifactId>opencv</artifactId>
     	<version>4.9.0-0</version> </dependency>
-
+    	-->
+		<!-- OPEN CV 직접 jar 4120 버전 안맞음 -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
